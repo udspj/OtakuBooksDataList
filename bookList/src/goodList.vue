@@ -12,7 +12,7 @@
 				<h3 style="color: orange;">¥ {{ good.price }}</h3>
 			</div >
 			
-			<Detail v-bind:imgs="imgs"></Detail>
+			<Detail v-bind:imgs="imgs" v-on:onclose="onDetailClose()"></Detail>
 
 		</div>
 	</div>
@@ -47,6 +47,9 @@ export default {
         			this.imgs = this.goods[i]["detail_imgs"];
         		}
         	}
+		  },
+		  onDetailClose() {
+		  	this.imgs = [];
 		  }
 	},
   watch: {

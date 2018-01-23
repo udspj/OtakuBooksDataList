@@ -44,9 +44,9 @@ export default {
         this.bk = 'http://ovwff8rq7.bkt.clouddn.com/'+img;
       },
       closeImage() {
-        this.imgs = [];
         this.bk = "";
         this.show = false;
+        this.$emit("onclose");
       }
   },
   
