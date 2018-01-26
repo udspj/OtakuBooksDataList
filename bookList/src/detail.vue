@@ -7,15 +7,15 @@
 
           <div style="position:relative; left:0px;bottom:10vw; width:100%;height:100%;">
               <div v-for="img in imgs">
-                <div v-on:click="showBigImage(img)" style="width: 10vw; height: 10vw; float: left; background-color: #fff; margin: 0px 10px 0px 0px; position: relative; border-color: #cfcfcf; border-style: solid; border-width: 5px;">
+                <div class="timg" v-on:click="showBigImage(img)">
                   <img v-bind:src="'http://ovwff8rq7.bkt.clouddn.com/'+img" style="width:100%; height:100%;"></img>
                 </div>
               </div>
           </div>
                    
            <div >
-               <button style="position:absolute; right:100px;top:30px; width:80px;height:30px;"v-on:click="openImage()">查看大图</button>
-               <button style="position:absolute; right:30px;top:30px; width:50px;height:30px;"v-on:click="closeImage()">关闭</button>
+               <button class="showimg" v-on:click="openImage()">查看大图</button>
+               <button class="closeimg" v-on:click="closeImage()">关闭</button>
            </div>
 
         </div>
@@ -84,6 +84,96 @@ export default {
   /*padding: 5px;*/
   background-color: #fff;
   transition: all .3s ease;
+}
+
+.showimg
+{
+  position:absolute; 
+  right:100px;
+  top:30px; 
+  width:80px;
+  height:30px;
+}
+
+.closeimg
+{
+  position:absolute; 
+  right:30px;
+  top:30px; 
+  width:50px;
+  height:30px;
+}
+
+.timgscontainer
+{
+  position:relative; 
+  left:0px;
+  bottom:10vw; 
+  width:100%;
+  height:100%;
+}
+
+.timg
+{
+  width: 10vw; 
+  height: 10vw; 
+  float: left; 
+  background-color: #fff; 
+  margin: 0px 10px 0px 0px; 
+  position: relative; 
+  border-color: #cfcfcf; 
+  border-style: solid; 
+  border-width: 5px;
+}
+
+@media(max-width:575px) {
+  .modal-container
+  {
+    margin : 140px 20px 140px 20px;
+    height: calc(100vh - 280px);
+    background-color: #fff;
+    transition: all .3s ease;
+  }
+
+  .showimg
+  {
+    position:absolute; 
+    right:120px;
+    top:150px; 
+    width:100px;
+    height:30px;
+  }
+
+  .closeimg
+  {
+    position:absolute; 
+    right:30px;
+    top:150px; 
+    width:70px;
+    height:30px;
+  }
+
+  .timgscontainer
+  {
+    position:relative; 
+    left:0px;
+    bottom:20vw; 
+    width:100%;
+    height:100%;
+  }
+
+  .timg
+  {
+    width: 20vw; 
+    height: 20vw; 
+    float: left; 
+    background-color: #fff; 
+    margin: 0px 10px 0px 0px; 
+    position: relative; 
+    border-color: #cfcfcf; 
+    border-style: solid; 
+    border-width: 5px;
+  }
 }
 
 </style>
